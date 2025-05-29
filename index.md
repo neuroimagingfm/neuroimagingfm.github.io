@@ -3,6 +3,66 @@ layout: default
 title: Brain Foundation Models @ NeurIPS 2025
 ---
 
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9fc;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+  .hero h2 {
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  .tagline {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+  .section {
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  .section h2 {
+    color: #2a5298;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.3em;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  footer {
+    background: #2a5298;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+  a {
+    color: #2a5298;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <header class="hero">
   <h1>Brain Foundation Models Workshop</h1>
   <h2>NeurIPS 2025</h2>
