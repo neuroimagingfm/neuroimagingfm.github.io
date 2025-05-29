@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Brain Foundation Models @ NeurIPS 2025
+title: Foundation Models for Neuroimaging @ NeurIPS 2025
 ---
 
 <style>
@@ -17,7 +17,7 @@ title: Brain Foundation Models @ NeurIPS 2025
     padding-left: 30px;
     padding-right: 30px;
   }
-  
+
   .wrapper {
     max-width: unset;
     margin-right: auto;
@@ -98,9 +98,9 @@ title: Brain Foundation Models @ NeurIPS 2025
 </style>
 
 <header class="hero">
-  <h1>Brain Foundation Models Workshop</h1>
+  <h1>Foundation Models for Neuroimaging</h1>
   <h2>NeurIPS 2025</h2>
-  <p class="tagline">Scalable models for neuroscience and clinical discovery</p>
+  <p class="tagline">Promises, pitfalls, and the imperative need for domain knowledge from cognitive and clinical neuroscience</p>
 </header>
 
 <section class="section">
