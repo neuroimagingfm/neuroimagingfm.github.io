@@ -13,6 +13,11 @@ title: Brain Foundation Models @ NeurIPS 2025
     padding: 0;
   }
 
+  .site-header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
   .wrapper {
     max-width: unset;
     margin-right: auto;
