@@ -168,7 +168,3 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     We aim to create an inclusive and collaborative environment for all attendees.
   </p>
 </section>
-
-<footer>
-  <p>© 2025 Brain Foundation Models Workshop. Part of <a href="https://neurips.cc">NeurIPS 2025</a>.</p>
-</footer>
