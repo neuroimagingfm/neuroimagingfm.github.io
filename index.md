@@ -12,23 +12,31 @@ title: Brain Foundation Models @ NeurIPS 2025
     margin: 0;
     padding: 0;
   }
+
   .hero {
-    width: 100vw;
-    box-sizing: border-box;
+    width: 100%;
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
+    padding: 4rem 1rem;
     text-align: center;
-    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        font-style: italic;
+    }
   }
-  .hero h1 {
-    font-size: 3em;
-    margin-bottom: 0.3em;
-  }
-  .hero h2 {
-    font-weight: 300;
-    font-size: 1.5em;
-    margin-bottom: 1em;
-  }
+
   .tagline {
     font-size: 1.2em;
     font-style: italic;
