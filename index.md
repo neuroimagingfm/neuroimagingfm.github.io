@@ -13,6 +13,8 @@ title: Brain Foundation Models @ NeurIPS 2025
     padding: 0;
   }
   .hero {
+    width: 100vw;
+    box-sizing: border-box;
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
     text-align: center;
@@ -60,6 +62,17 @@ title: Brain Foundation Models @ NeurIPS 2025
   }
   a:hover {
     text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2em;
+    }
+    .hero h2 {
+      font-size: 1.2em;
+    }
+    .tagline {
+      font-size: 1em;
+    }
   }
 </style>
 
