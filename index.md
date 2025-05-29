@@ -13,6 +13,10 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     padding: 0;
   }
 
+  footer {
+    display: none;
+  }
+
   .site-header {
     padding-left: 30px;
     padding-right: 30px;
