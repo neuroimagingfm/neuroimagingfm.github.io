@@ -103,7 +103,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
 
 <header class="hero">
   <h1>Foundation Models for Neuroimaging</h1>
-  <h2>NeurIPS 2025</h2>
+  <h2>Submitted at NeurIPS 2025</h2>
   <p class="tagline">Promises, pitfalls, and the imperative need for domain knowledge from cognitive and clinical neuroscience</p>
 </header>
 
