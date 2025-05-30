@@ -31,7 +31,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   }
 
   .hero {
-    width: 100%;
+    width: 100vw;
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
     padding: 4rem 1rem;
@@ -41,60 +41,80 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
 
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-out;
+  }
 
-    h2 {
-        font-size: 1.5rem;
-        font-weight: normal;
-        font-style: italic;
-    }
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0.5rem auto;
+    animation: fadeInUp 1.2s ease-out;
   }
 
   .tagline {
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-style: italic;
+    color: #e0e0e0;
   }
+
   .section {
     max-width: 960px;
     margin: 60px auto;
     padding: 0 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
   }
+
   .section h2 {
     color: #2a5298;
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.3em;
   }
+
   ul {
     padding-left: 20px;
   }
+
   ul li {
     margin-bottom: 10px;
   }
-  footer {
-    background: #2a5298;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-  }
+
   a {
     color: #2a5298;
     text-decoration: none;
+    font-weight: 500;
   }
+
   a:hover {
     text-decoration: underline;
   }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
   @media (max-width: 600px) {
     .hero h1 {
       font-size: 2em;
     }
-    .hero h2 {
-      font-size: 1.2em;
+
+    .hero p {
+      font-size: 1em;
     }
+
     .tagline {
       font-size: 1em;
     }
