@@ -32,44 +32,52 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
 
   .hero {
     width: 100vw;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    height: 100vh;
+    background: linear-gradient(to right, #1e3c72, #2a5298), url('assets/images/brain-background.jpg') center/cover no-repeat;
     color: white;
     padding: 4rem 1rem;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(30, 60, 114, 0.6);
+    z-index: 0;
+  }
+
+  .hero > * {
+    z-index: 1;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    animation: fadeInDown 1s ease-out;
+  }
+
+  .hero .tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
   }
 
   .hero p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0.5rem auto;
-    animation: fadeInUp 1.2s ease-out;
-  }
-
-  .tagline {
-    font-size: 1.4em;
-    font-style: italic;
-    color: #e0e0e0;
+    font-size: 1.2rem;
   }
 
   .section {
     max-width: 960px;
     margin: 60px auto;
     padding: 0 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
   }
 
   .section h2 {
@@ -89,35 +97,10 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   a {
     color: #2a5298;
     text-decoration: none;
-    font-weight: 500;
   }
 
   a:hover {
     text-decoration: underline;
-  }
-
-  @keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2em;
-    }
-
-    .hero p {
-      font-size: 1em;
-    }
-
-    .tagline {
-      font-size: 1em;
-    }
   }
 
   .organizers-grid {
@@ -125,30 +108,41 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     margin-top: 20px;
-    }
+  }
 
-    .organizer-card {
+  .organizer-card {
     background: white;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
-    }
+  }
 
-    .organizer-card:hover {
+  .organizer-card:hover {
     transform: translateY(-5px);
-    }
+  }
 
-    .organizer-card img {
+  .organizer-card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #2a5298;
-    }
+  }
 
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <header class="hero">
@@ -248,4 +242,3 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     </div>
   </div>
 </section>
-
