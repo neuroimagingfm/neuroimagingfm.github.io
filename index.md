@@ -119,6 +119,36 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
       font-size: 1em;
     }
   }
+
+  .organizers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    }
+
+    .organizer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    }
+
+    .organizer-card:hover {
+    transform: translateY(-5px);
+    }
+
+    .organizer-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #2a5298;
+    }
+
 </style>
 
 <header class="hero">
@@ -192,3 +222,30 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     We aim to create an inclusive and collaborative environment for all attendees.
   </p>
 </section>
+
+<section class="section">
+  <h2>Organizers</h2>
+  <div class="organizers-grid">
+    <div class="organizer-card">
+      <img src="assets/images/organizers/carlo.jpg" alt="Carlo Alberto Barbano">
+      <h3>Carlo Alberto Barbano</h3>
+      <p>University of Turin</p>
+    </div>
+    <div class="organizer-card">
+      <img src="assets/images/organizers/benoit.jpg" alt="Benoit Dufumier">
+      <h3>Benoit Dufumier</h3>
+      <p>NeuroSpin, CEA</p>
+    </div>
+    <div class="organizer-card">
+      <img src="assets/images/organizers/victoria.jpg" alt="Victoria Shevchenko">
+      <h3>Victoria Shevchenko</h3>
+      <p>INRIA Saclay, Université Paris Cité</p>
+    </div>
+    <div class="organizer-card">
+      <img src="assets/images/organizers/demian.jpg" alt="Demian Wassermann">
+      <h3>Demian Wassermann</h3>
+      <p>INRIA Saclay</p>
+    </div>
+  </div>
+</section>
+
