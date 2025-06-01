@@ -400,7 +400,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     <li>Gaël Varoquaux (INRIA)</li>
     <li>Christos Davatzikos (University of Pennsylvania)</li>
     <li>Anqi Qiu (Hong Kong Polytechnic University)</li>
-    <li>Jean-Rémi King / Charlotte Caucheteux / Hubert Banville (Meta)</li>
+    <li>Hubert Banville (Meta, FAIR)</li>
     <li>Paul Thompson (University of Southern California)</li>
   </ul>
 </section>
