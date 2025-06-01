@@ -86,6 +86,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     z-index: 1000;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -93,7 +94,6 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     background: rgba(30, 60, 114, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
-
 
   .hero-nav ul {
     list-style: none;
@@ -127,6 +127,36 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   .hero-nav ul li a:hover {
     background: #ffffff33;
     color: #ffffff;
+  }
+
+  /* Mobile hamburger menu */
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 
   .section {
@@ -173,25 +203,6 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2em;
-    }
-
-    .hero p {
-      font-size: 1em;
-    }
-
-    .tagline {
-      font-size: 1em;
-    }
-
-    .hero-nav ul {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-
   .organizers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -220,10 +231,129 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     margin-bottom: 15px;
     border: 3px solid #2a5298;
   }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2em;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+    }
+
+    .tagline {
+      font-size: 1.1em;
+    }
+
+    .hero-nav {
+      padding: 15px 20px;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .hero-nav ul {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 280px;
+      background: rgba(30, 60, 114, 0.98);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: right 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-nav ul.active {
+      right: 0;
+    }
+
+    .hero-nav ul li {
+      margin: 0;
+    }
+
+    .hero-nav ul li:not(:last-child)::after {
+      display: none;
+    }
+
+    .hero-nav ul li a {
+      font-size: 1.2em;
+      padding: 12px 20px;
+      display: block;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-nav ul li a:hover {
+      background: #ffffff22;
+      transform: translateX(5px);
+    }
+
+    .section {
+      margin: 40px 20px;
+      padding: 1.5rem;
+    }
+
+    .organizers-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .organizer-card {
+      padding: 15px;
+    }
+
+    .organizer-card img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 1.8em;
+    }
+
+    .hero p {
+      font-size: 1em;
+    }
+
+    .tagline {
+      font-size: 1em;
+    }
+
+    .hero-nav ul {
+      width: 100%;
+    }
+
+    .section {
+      margin: 30px 15px;
+      padding: 1.2rem;
+    }
+
+    .organizers-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
 </style>
 
 <header class="hero">
   <nav class="hero-nav">
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul>
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#topics">TOPICS</a></li>
@@ -319,8 +449,8 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </div>
 </section>
 
-
 <script>
+  // Scroll effect for navigation
   window.addEventListener('scroll', function () {
     const nav = document.querySelector('.hero-nav');
     if (window.scrollY > 50) {
@@ -328,5 +458,33 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     } else {
       nav.classList.remove('scrolled');
     }
+  });
+
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.hero-nav ul');
+    
+    mobileToggle.addEventListener('click', function() {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.hero-nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
   });
 </script>
