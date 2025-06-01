@@ -4,6 +4,10 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
 ---
 
 <style>
+  .site-header {
+    display: none
+  };
+
   body {
     font-family: 'Segoe UI', sans-serif;
     background: #f9f9fc;
@@ -13,6 +17,10 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     padding: 0;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   footer {
     display: none;
   }
@@ -20,6 +28,10 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   .site-header {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .page-content {
+    padding: 0px;
   }
 
   .wrapper {
@@ -34,14 +46,15 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, #1e3c72, #2a5298);
+    background-size: cover;
     color: white;
     padding: 4rem 1rem;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   .hero h1 {
@@ -61,6 +74,59 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     font-size: 1.4em;
     font-style: italic;
     color: #e0e0e0;
+  }
+
+  .hero-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: transparent;
+    padding: 15px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hero-nav.scrolled {
+    background: rgba(30, 60, 114, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .hero-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-nav ul li {
+    position: relative;
+  }
+
+  .hero-nav ul li:not(:last-child)::after {
+    content: "|";
+    margin-left: 15px;
+    color: #ffffff99;
+  }
+
+  .hero-nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .hero-nav ul li a:hover {
+    background: #ffffff33;
+    color: #ffffff;
   }
 
   .section {
@@ -119,6 +185,11 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     .tagline {
       font-size: 1em;
     }
+
+    .hero-nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   .organizers-grid {
@@ -126,39 +197,47 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     margin-top: 20px;
-    }
+  }
 
-    .organizer-card {
+  .organizer-card {
     background: white;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
-    }
+  }
 
-    .organizer-card:hover {
+  .organizer-card:hover {
     transform: translateY(-5px);
-    }
+  }
 
-    .organizer-card img {
+  .organizer-card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #2a5298;
-    }
-
+  }
 </style>
 
 <header class="hero">
+  <nav class="hero-nav">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#topics">TOPICS</a></li>
+      <li><a href="#speakers">SPEAKERS</a></li>
+      <li><a href="#program">PROGRAM</a></li>
+      <li><a href="#organizers">ORGANIZERS</a></li>
+    </ul>
+  </nav>
   <h1>Foundation Models for Neuroimaging</h1>
   <p class="tagline">Promises, pitfalls, and the imperative need for domain knowledge from cognitive and clinical neuroscience</p>
   <p>Submitted at NeurIPS 2025</p>
 </header>
 
-<section class="section">
+<section class="section" id="about">
   <h2>About</h2>
   <p>
     Recent progress in foundation models has transformed many areas of machine learning,
@@ -173,17 +252,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </p>
 </section>
 
-<section class="section">
-  <h2>Objectives</h2>
-  <ul>
-    <li>Develop scalable, generalizable brain models across diverse populations</li>
-    <li>Integrate multimodal neuroimaging to build unified brain representations</li>
-    <li>Enable clinical applications such as biomarker discovery and diagnosis</li>
-    <li>Advance cognitive neuroscience via brain decoding and representation learning</li>
-  </ul>
-</section>
-
-<section class="section">
+<section class="section" id="topics">
   <h2>Topics</h2>
   <ul>
     <li>Foundation models for structural, functional, and diffusion imaging</li>
@@ -194,7 +263,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </ul>
 </section>
 
-<section class="section">
+<section class="section" id="speakers">
   <h2>Speakers</h2>
   <ul>
     <li>Russell Poldrack (Stanford University)</li>
@@ -206,7 +275,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </ul>
 </section>
 
-<section class="section">
+<section class="section" id="program">
   <h2>Program Schedule</h2>
   <p>See the full schedule <a href="#">here</a>. The workshop will include invited talks, spotlight presentations, poster sessions, and a closing panel discussion.</p>
 </section>
@@ -224,7 +293,7 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </p>
 </section>
 
-<section class="section">
+<section class="section" id="organizers">
   <h2>Organizers</h2>
   <div class="organizers-grid">
     <div class="organizer-card">
@@ -250,3 +319,14 @@ title: Foundation Models for Neuroimaging @ NeurIPS 2025
   </div>
 </section>
 
+
+<script>
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('.hero-nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
